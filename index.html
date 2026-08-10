@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
@@ -675,19 +675,8 @@
     "company": "content/company.json"
 }</script>
 
-    <script type="module">
-import { submitContactForm } from '@appsmithorg/template-frontend/utility';
-document.dispatchEvent(new CustomEvent('kite:core-ready', {
-  detail: { submitContactForm }
-}));
-</script>
-
 <script id="main_script">
-// Receive async-loaded core utilities via CustomEvent (non-blocking)
-let submitContactForm = null;
-document.addEventListener('kite:core-ready', (e) => {
-  submitContactForm = e.detail.submitContactForm;
-});
+
 // Initialize Icons
       lucide.createIcons();
 
