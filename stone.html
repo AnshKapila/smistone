@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
@@ -304,110 +304,58 @@
       </div>
     </div>
 
-    <main id="app">
-      
-      <!-- HERO SECTION -->
-      <section class="relative h-screen w-full flex flex-col justify-end overflow-hidden bg-global-dark">
-        <!-- Parallax Background -->
-        <div class="absolute inset-0 w-full overflow-hidden" style="height: 130%; top: -15%;">
-          <img src="https://static.kite.ai/image/upload/v1776530175/app/12f8a823-49ae-41b1-b52c-2af180d1bd62/iter2/hero-bg.png" alt="Luxury interior with dark stone" class="w-full h-full object-cover parallax-img" data-speed="0.4" />
-          <div class="absolute inset-0 gradient-overlay-top"></div>
-          <div class="absolute inset-0 bg-black/20"></div> <!-- Subtle darkening -->
+        <main id="app">
+      <!-- STONE HERO -->
+      <section class="relative h-[60vh] w-full flex items-center justify-center overflow-hidden mask-reveal-container">
+        <div class="absolute inset-0 z-0">
+          <img src="https://static.kite.ai/image/upload/v1776530174/app/12f8a823-49ae-41b1-b52c-2af180d1bd62/iter2/cat-field.png" alt="Field Stone" class="w-full h-full object-cover parallax-img" data-speed="0.3" />
+          <div class="absolute inset-0 bg-black/40"></div>
         </div>
+        <div class="relative z-10 text-center px-4">
+          <h1 class="font-serif text-5xl md:text-7xl mb-4 text-white reveal active">Stone Details</h1>
+          <p class="font-sans text-lg md:text-xl text-white/80 max-w-2xl mx-auto tracking-wide font-light reveal active delay-100">
+            Explore the unique textures and characteristics.
+          </p>
+        </div>
+      </section>
 
-        <!-- Content -->
-        <div class="relative z-10 w-full max-w-[1280px] mx-auto px-6 pb-24 md:pb-32 flex flex-col md:flex-row md:items-end justify-between gap-8">
-          <div class="max-w-3xl">
-            <h1 class="font-sans font-light text-[12vw] leading-[1] md:text-7xl lg:text-[80px] tracking-tightest mb-6 text-white">
-              <span class="mask-reveal-container block"><span class="mask-reveal" id="hero-line-1">Surfaces of</span></span>
-              <span class="mask-reveal-container block"><span class="mask-reveal" id="hero-line-2">Distinction.</span></span>
-            </h1>
-            <p class="font-sans text-lg md:text-xl text-white/70 max-w-xl reveal delay-300" id="hero-subtext">
-              Curated architectural materials for visionary spaces. We supply premium stone to architects, designers, and creators who demand uncompromising quality.
+      <!-- STONE DETAILS -->
+      <section class="py-24 bg-white text-black px-4 md:px-12">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
+          <div class="reveal">
+            <h2 class="font-serif text-4xl mb-6">Specifications</h2>
+            <div class="space-y-6 font-sans text-sm tracking-wide">
+              <div class="border-b border-black/10 pb-4 flex justify-between">
+                <span class="text-black/60 uppercase">Origin</span>
+                <span class="font-medium">Curated Selection</span>
+              </div>
+              <div class="border-b border-black/10 pb-4 flex justify-between">
+                <span class="text-black/60 uppercase">Finish</span>
+                <span class="font-medium">Matte / Honed</span>
+              </div>
+              <div class="border-b border-black/10 pb-4 flex justify-between">
+                <span class="text-black/60 uppercase">Applications</span>
+                <span class="font-medium">Interior Flooring, Walls</span>
+              </div>
+            </div>
+            <div class="mt-12">
+              <a href="index.html#contact" class="btn-primary hover-trigger">
+                Request a Sample <i data-lucide="chevron-right" class="w-4 h-4 icon-arrow"></i>
+              </a>
+            </div>
+          </div>
+          <div class="reveal delay-100">
+            <p class="font-sans text-lg leading-relaxed text-black/80 mb-8">
+              This collection brings raw, architectural beauty into interior and exterior spaces. Selected for its unmatched consistency and tactile depth, it serves as the foundational element for luxury spaces.
+            </p>
+            <p class="font-sans text-lg leading-relaxed text-black/80">
+              Ideal for large format applications where seamless continuity is paramount. Each slab is rigorously inspected to ensure the highest standards for professional trade use.
             </p>
           </div>
-          <div class="reveal delay-300">
-            <a href="#materials" class="btn-primary hover-trigger">
-              EXPLORE SURFACES <i data-lucide="chevron-right" class="w-4 h-4 icon-arrow"></i>
-            </a>
-          </div>
         </div>
       </section>
-
-      <!-- CATEGORY INDEX (Light Section) -->
-      <section class="bg-global-light text-black py-[120px] md:py-[160px]">
-        <div class="max-w-[1280px] mx-auto px-6">
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 border-t border-black/10 pt-12">
-            
-            <div class="reveal relative md:pr-8 md:border-r border-black/10">
-              <span class="block font-sans font-extralight text-6xl text-black/20 mb-6">01</span>
-              <h3 class="font-serif text-2xl mb-4">Sourcing</h3>
-              <p class="font-sans text-body-muted-light leading-relaxed">
-                We travel globally to unearth materials of exceptional character, focusing on unique geological formations and sustainable quarrying practices.
-              </p>
-            </div>
-            
-            <div class="reveal delay-100 relative md:pr-8 md:border-r border-black/10">
-              <span class="block font-sans font-extralight text-6xl text-black/20 mb-6">02</span>
-              <h3 class="font-serif text-2xl mb-4">Curation</h3>
-              <p class="font-sans text-body-muted-light leading-relaxed">
-                Our collections are heavily edited. We reject the superfluous, presenting only materials that offer true architectural value and aesthetic longevity.
-              </p>
-            </div>
-            
-            <div class="reveal delay-200">
-              <span class="block font-sans font-extralight text-6xl text-black/20 mb-6">03</span>
-              <h3 class="font-serif text-2xl mb-4">Application</h3>
-              <p class="font-sans text-body-muted-light leading-relaxed">
-                Beyond supply, we consult on technical application, ensuring our surfaces perform flawlessly whether deployed on expansive floors or intricate feature walls.
-              </p>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      <!-- PHILOSOPHY STATEMENT -->
-      <section id="philosophy" class="bg-global-light text-black pb-[120px] md:pb-[160px]">
-        <div class="max-w-[900px] mx-auto px-6 text-center">
-          <h2 class="font-serif text-4xl md:text-5xl leading-tight mb-16 reveal">
-            We believe materials dictate the soul of a space. A design-first approach for those who shape environments.
-          </h2>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 text-left reveal delay-100">
-            <p class="font-sans text-body-muted-light leading-relaxed">
-              At SMI Stone, we do not merely sell tiles; we provide the foundational elements of architectural expression. Our focus is squarely on serving the rigorous demands of architects and interior designers.
-            </p>
-          <div class="w-full md:w-1/2 p-8 md:p-16 lg:p-24 flex flex-col justify-center bg-global-dark">
-            <div class="max-w-md reveal">
-              <h2 class="font-serif text-4xl mb-4">Start a Conversation.</h2>
-              <p class="font-sans text-body-muted-dark mb-12">
-                We do not operate an online store. We believe in consultation and bespoke service. Reach out to discuss your project requirements.
-              </p>
-
-              <form id="contact-form" class="flex flex-col gap-6">
-                <div>
-                  <label for="name" class="sr-only">Name</label>
-                  <input type="text" id="name" name="name" required placeholder="Name / Firm" class="w-full bg-transparent border-b border-white/20 py-3 text-white placeholder:text-white/30 focus:outline-none focus:border-white transition-colors font-sans" />
-                </div>
-                <div>
-                  <label for="email" class="sr-only">Email</label>
-                  <input type="email" id="email" name="email" required placeholder="Email Address" class="w-full bg-transparent border-b border-white/20 py-3 text-white placeholder:text-white/30 focus:outline-none focus:border-white transition-colors font-sans" />
-                </div>
-                <div>
-                  <label for="project" class="sr-only">Project Details</label>
-                  <textarea id="project" name="project" rows="3" placeholder="Project Details (Optional)" class="w-full bg-transparent border-b border-white/20 py-3 text-white placeholder:text-white/30 focus:outline-none focus:border-white transition-colors font-sans resize-none"></textarea>
-                </div>
-                <button type="submit" class="self-start mt-4 bg-white text-black px-8 py-4 font-sans text-sm font-medium tracking-widest uppercase hover:bg-gray-200 transition-colors hover-trigger">
-                  Contact Us
-                </button>
-              </form>
-            </div>
-          </div>
-
-        </div>
-      </section>
-
     </main>
+
 
     <!-- FOOTER -->
     <footer class="bg-[#111111] border-t border-white/10 pt-16 pb-8">
@@ -631,4 +579,5 @@
     
   </body>
 </html>
+
 
