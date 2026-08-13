@@ -12,6 +12,7 @@ export default defineConfig({
         about: resolve(__dirname, 'about.html'),
         contact: resolve(__dirname, 'contact.html'),
         professionals: resolve(__dirname, 'professionals.html'),
+        products: resolve(__dirname, 'products.html'),
         'field-stone': resolve(__dirname, 'field-stone.html'),
         'slate-stone': resolve(__dirname, 'slate-stone.html'),
         'ripple-stone': resolve(__dirname, 'ripple-stone.html'),

@@ -16,7 +16,8 @@ const filesToUpdate = [
   'strips.html',
   'galaxy-mix.html',
   'waterfall-stone.html',
-  'seamless-slabs.html'
+  'seamless-slabs.html',
+  'products.html'
 ];
 
 filesToUpdate.forEach(file => {
