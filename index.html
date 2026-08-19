@@ -191,7 +191,7 @@
       /* HORIZONTAL SCRUB SECTION */
       @media (min-width: 768px) {
         .scrub-container {
-          height: 400vh; /* 4 cards = 400vh */
+          height: 800vh; /* 4 cards = 400vh */
           position: relative;
         }
         .scrub-sticky {
@@ -270,6 +270,7 @@
         <div class="hidden md:flex items-center gap-10 absolute left-1/2 -translate-x-1/2">
           <a href="index.html" class="text-sm font-sans font-medium tracking-widest uppercase hover:text-white/60 transition-colors">Home</a>
           <a href="products.html" class="text-sm font-sans font-medium tracking-widest uppercase hover:text-white/60 transition-colors">Our Products</a>
+            <a href="gallery.html" class="text-sm font-sans font-medium tracking-widest uppercase hover:text-white/60 transition-colors">Gallery</a>
           <a href="about.html" class="text-sm font-sans font-medium tracking-widest uppercase hover:text-white/60 transition-colors">About Us</a>
           <a href="contact.html" class="text-sm font-sans font-medium tracking-widest uppercase hover:text-white/60 transition-colors">Contact</a>
         </div>
@@ -277,7 +278,7 @@
         <!-- Desktop CTAs -->
         <div class="hidden md:flex items-center gap-6">
           <a href="#contact" class="btn-primary hover-trigger">
-            Book a Call <i data-lucide="chevron-right" class="w-4 h-4 icon-arrow"></i>
+            Get In Touch <i data-lucide="chevron-right" class="w-4 h-4 icon-arrow"></i>
           </a>
         </div>
 
@@ -299,6 +300,7 @@
       <div class="flex-1 flex flex-col justify-center items-start px-12 gap-8">
         <a href="index.html" class="text-4xl font-serif mobile-link">Home</a>
         <a href="products.html" class="text-4xl font-serif mobile-link">Our Products</a>
+          <a href="gallery.html" class="text-4xl font-serif mobile-link">Gallery</a>
         <a href="about.html" class="text-4xl font-serif mobile-link">About Us</a>
         <a href="contact.html" class="text-4xl font-serif mobile-link mt-8 text-white/50">Contact Us</a>
       </div>
@@ -318,7 +320,7 @@
         <!-- Content -->
         <div class="relative z-10 w-full max-w-[1280px] mx-auto px-6 pb-24 md:pb-32 flex flex-col md:flex-row md:items-end justify-between gap-8">
           <div class="max-w-3xl">
-            <h1 class="font-sans font-light text-[12vw] leading-[1] md:text-7xl lg:text-[80px] tracking-tightest mb-6 text-white">
+            <h1 class="font-serif font-light text-[12vw] leading-[1] md:text-7xl lg:text-[80px] tracking-tightest mb-6 text-white">
               <span class="mask-reveal-container block"><span class="mask-reveal" id="hero-line-1">Surfaces of</span></span>
               <span class="mask-reveal-container block"><span class="mask-reveal" id="hero-line-2">Distinction.</span></span>
             </h1>
@@ -339,37 +341,46 @@
         <div class="max-w-[1280px] mx-auto px-6">
           <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-12">
             
-            <div class="reveal relative overflow-hidden group min-h-[400px] flex flex-col justify-end p-8 rounded-lg">
-              <img src="https://static.kite.ai/image/upload/v1776530174/app/12f8a823-49ae-41b1-b52c-2af180d1bd62/iter2/trust-bg.png" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 z-0" alt="Sourcing" />
-              <div class="absolute inset-0 bg-black/60 z-0 group-hover:bg-black/50 transition-colors duration-700"></div>
-              <div class="relative z-10">
-                <span class="block font-sans font-extralight text-6xl text-white/40 mb-4">01</span>
-                <h3 class="font-serif text-2xl mb-4 text-white">Sourcing</h3>
-                <p class="font-sans text-white/80 leading-relaxed text-sm">
+            <div class="reveal relative overflow-hidden group h-[400px] md:h-[500px] flex flex-col justify-between p-8 rounded-lg bg-white border border-black/10">
+              <div class="absolute inset-0 w-full h-full bg-black/60 z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
+              <img src="https://static.kite.ai/image/upload/v1776530174/app/12f8a823-49ae-41b1-b52c-2af180d1bd62/iter2/trust-bg.png" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 translate-y-full group-hover:translate-y-0 z-[-1] pointer-events-none" alt="Sourcing" />
+              
+              <div class="relative z-10 w-full flex justify-start">
+                <span class="block font-sans font-extralight text-6xl text-black/20 group-hover:text-white/40 transition-colors duration-500">01</span>
+              </div>
+              <div class="relative z-10 w-full">
+                <h3 class="font-serif text-2xl mb-4 text-black group-hover:text-white transition-colors duration-500">Sourcing</h3>
+                <p class="font-sans text-body-muted-light group-hover:text-white/80 transition-colors duration-500 leading-relaxed text-sm">
                   We travel globally to unearth materials of exceptional character, focusing on unique geological formations and sustainable quarrying practices.
                 </p>
               </div>
             </div>
             
-            <div class="reveal delay-100 relative overflow-hidden group min-h-[400px] flex flex-col justify-end p-8 rounded-lg">
-              <img src="https://static.kite.ai/image/upload/v1776530173/app/12f8a823-49ae-41b1-b52c-2af180d1bd62/iter2/cat-slate.png" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 z-0" alt="Curation" />
-              <div class="absolute inset-0 bg-black/60 z-0 group-hover:bg-black/50 transition-colors duration-700"></div>
-              <div class="relative z-10">
-                <span class="block font-sans font-extralight text-6xl text-white/40 mb-4">02</span>
-                <h3 class="font-serif text-2xl mb-4 text-white">Curation</h3>
-                <p class="font-sans text-white/80 leading-relaxed text-sm">
+            <div class="reveal delay-100 relative overflow-hidden group h-[400px] md:h-[500px] flex flex-col justify-between p-8 rounded-lg bg-white border border-black/10">
+              <div class="absolute inset-0 w-full h-full bg-black/60 z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
+              <img src="https://static.kite.ai/image/upload/v1776530173/app/12f8a823-49ae-41b1-b52c-2af180d1bd62/iter2/cat-slate.png" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 translate-y-full group-hover:translate-y-0 z-[-1] pointer-events-none" alt="Curation" />
+              
+              <div class="relative z-10 w-full flex justify-start">
+                <span class="block font-sans font-extralight text-6xl text-black/20 group-hover:text-white/40 transition-colors duration-500">02</span>
+              </div>
+              <div class="relative z-10 w-full">
+                <h3 class="font-serif text-2xl mb-4 text-black group-hover:text-white transition-colors duration-500">Curation</h3>
+                <p class="font-sans text-body-muted-light group-hover:text-white/80 transition-colors duration-500 leading-relaxed text-sm">
                   Our collections are heavily edited. We reject the superfluous, presenting only materials that offer true architectural value and aesthetic longevity.
                 </p>
               </div>
             </div>
             
-            <div class="reveal delay-200 relative overflow-hidden group min-h-[400px] flex flex-col justify-end p-8 rounded-lg">
-              <img src="https://static.kite.ai/image/upload/v1776530174/app/12f8a823-49ae-41b1-b52c-2af180d1bd62/iter2/cat-ripple.png" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 z-0" alt="Application" />
-              <div class="absolute inset-0 bg-black/60 z-0 group-hover:bg-black/50 transition-colors duration-700"></div>
-              <div class="relative z-10">
-                <span class="block font-sans font-extralight text-6xl text-white/40 mb-4">03</span>
-                <h3 class="font-serif text-2xl mb-4 text-white">Application</h3>
-                <p class="font-sans text-white/80 leading-relaxed text-sm">
+            <div class="reveal delay-200 relative overflow-hidden group h-[400px] md:h-[500px] flex flex-col justify-between p-8 rounded-lg bg-white border border-black/10">
+              <div class="absolute inset-0 w-full h-full bg-black/60 z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
+              <img src="https://static.kite.ai/image/upload/v1776530174/app/12f8a823-49ae-41b1-b52c-2af180d1bd62/iter2/cat-ripple.png" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 translate-y-full group-hover:translate-y-0 z-[-1] pointer-events-none" alt="Application" />
+              
+              <div class="relative z-10 w-full flex justify-start">
+                <span class="block font-sans font-extralight text-6xl text-black/20 group-hover:text-white/40 transition-colors duration-500">03</span>
+              </div>
+              <div class="relative z-10 w-full">
+                <h3 class="font-serif text-2xl mb-4 text-black group-hover:text-white transition-colors duration-500">Application</h3>
+                <p class="font-sans text-body-muted-light group-hover:text-white/80 transition-colors duration-500 leading-relaxed text-sm">
                   Beyond supply, we consult on technical application, ensuring our surfaces perform flawlessly whether deployed on expansive floors or intricate feature walls.
                 </p>
               </div>
@@ -428,68 +439,67 @@
               <div class="scrub-track" id="scrub-track">
                 
                 <!-- Card 1 -->
-                <div class="w-[85vw] md:w-[400px] flex-shrink-0 bg-global-surface rounded-lg p-6 flex flex-col justify-between group cursor-pointer hover-trigger" window.location.href=''>
-                  <div>
+                <div class="w-[85vw] md:w-[400px] flex-shrink-0 bg-global-surface rounded-lg flex flex-col justify-between group cursor-pointer hover-trigger overflow-hidden h-[55vh] min-h-[450px]" window.location.href=''>
+                  <div class="p-6 pb-0 flex-grow">
                     <span class="block font-sans font-extralight text-5xl text-white/20 mb-6">01</span>
                     <h3 class="font-serif text-2xl mb-2 group-hover:text-white transition-colors">Field Stone</h3>
                     <p class="font-sans text-sm text-body-muted-dark mb-8">Rugged, natural formations for robust exterior and interior facades.</p>
                   </div>
-                  <div class="relative w-full aspect-[4/3] overflow-hidden rounded">
+                  <div class="p-6 pt-0"><div class="relative w-full aspect-[4/3] overflow-hidden rounded">
                     <img src="https://static.kite.ai/image/upload/v1776530174/app/12f8a823-49ae-41b1-b52c-2af180d1bd62/iter2/cat-field.png" alt="Field Stone" class="w-full h-full object-cover hover-card-img" />
                     <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                       <span class="font-sans text-sm uppercase tracking-widest font-medium">Explore</span>
                     </div>
-                  </div>
+                  </div></div>
                 </div>
 
                 <!-- Card 2 -->
-                <div class="w-[85vw] md:w-[400px] flex-shrink-0 bg-global-surface rounded-lg p-6 flex flex-col justify-between group cursor-pointer hover-trigger" window.location.href=''>
-                  <div>
+                <div class="w-[85vw] md:w-[400px] flex-shrink-0 bg-global-surface rounded-lg flex flex-col justify-between group cursor-pointer hover-trigger overflow-hidden h-[55vh] min-h-[450px]" window.location.href=''>
+                  <div class="p-6 pb-0 flex-grow">
                     <span class="block font-sans font-extralight text-5xl text-white/20 mb-6">02</span>
                     <h3 class="font-serif text-2xl mb-2 group-hover:text-white transition-colors">Slate Stone</h3>
                     <p class="font-sans text-sm text-body-muted-dark mb-8">Minimalist, matte finishes ideal for contemporary luxury spaces.</p>
                   </div>
-                  <div class="relative w-full aspect-[4/3] overflow-hidden rounded">
+                  <div class="p-6 pt-0"><div class="relative w-full aspect-[4/3] overflow-hidden rounded">
                     <img src="https://static.kite.ai/image/upload/v1776530173/app/12f8a823-49ae-41b1-b52c-2af180d1bd62/iter2/cat-slate.png" alt="Slate Stone" class="w-full h-full object-cover hover-card-img" />
                     <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                       <span class="font-sans text-sm uppercase tracking-widest font-medium">Explore</span>
                     </div>
-                  </div>
+                  </div></div>
                 </div>
 
                 <!-- Card 3 -->
-                <div class="w-[85vw] md:w-[400px] flex-shrink-0 bg-global-surface rounded-lg p-6 flex flex-col justify-between group cursor-pointer hover-trigger" window.location.href=''>
-                  <div>
+                <div class="w-[85vw] md:w-[400px] flex-shrink-0 bg-global-surface rounded-lg flex flex-col justify-between group cursor-pointer hover-trigger overflow-hidden h-[55vh] min-h-[450px]" window.location.href=''>
+                  <div class="p-6 pb-0 flex-grow">
                     <span class="block font-sans font-extralight text-5xl text-white/20 mb-6">03</span>
                     <h3 class="font-serif text-2xl mb-2 group-hover:text-white transition-colors">Ripple Stone</h3>
                     <p class="font-sans text-sm text-body-muted-dark mb-8">Deep, organic carved textures that play dramatically with light.</p>
                   </div>
-                  <div class="relative w-full aspect-[4/3] overflow-hidden rounded">
+                  <div class="p-6 pt-0"><div class="relative w-full aspect-[4/3] overflow-hidden rounded">
                     <img src="https://static.kite.ai/image/upload/v1776530174/app/12f8a823-49ae-41b1-b52c-2af180d1bd62/iter2/cat-ripple.png" alt="Ripple Stone" class="w-full h-full object-cover hover-card-img" />
                     <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                       <span class="font-sans text-sm uppercase tracking-widest font-medium">Explore</span>
                     </div>
-                  </div>
+                  </div></div>
                 </div>
 
                 <!-- Card 4 -->
-                <div class="w-[85vw] md:w-[400px] flex-shrink-0 bg-global-surface rounded-lg p-6 flex flex-col justify-between group cursor-pointer hover-trigger" window.location.href=''>
-                  <div>
+                <div class="w-[85vw] md:w-[400px] flex-shrink-0 bg-global-surface rounded-lg flex flex-col justify-between group cursor-pointer hover-trigger overflow-hidden h-[55vh] min-h-[450px]" window.location.href=''>
+                  <div class="p-6 pb-0 flex-grow">
                     <span class="block font-sans font-extralight text-5xl text-white/20 mb-6">04</span>
                     <h3 class="font-serif text-2xl mb-2 group-hover:text-white transition-colors">Sandstone</h3>
                     <p class="font-sans text-sm text-body-muted-dark mb-8">Smooth, warm-toned surfaces perfect for expansive gallery flooring.</p>
                   </div>
-                  <div class="relative w-full aspect-[4/3] overflow-hidden rounded">
+                  <div class="p-6 pt-0"><div class="relative w-full aspect-[4/3] overflow-hidden rounded">
                     <img src="https://static.kite.ai/image/upload/v1776530175/app/12f8a823-49ae-41b1-b52c-2af180d1bd62/iter2/cat-sandstone.png" alt="Sandstone" class="w-full h-full object-cover hover-card-img" />
                     <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                       <span class="font-sans text-sm uppercase tracking-widest font-medium">Explore</span>
                     </div>
                   </div>
+                </div></div>
                 </div>
-
               </div>
             </div>
-
           </div>
         </div>
       </section>
@@ -561,7 +571,7 @@
               <p class="font-sans text-body-muted-dark mb-8 leading-relaxed">
                 We understand the stakes of high-end design. Our commitment is providing unmatched consistency across large orders, rigorous quality control, and dedicated technical support for your firm.
               </p>
-              <a href="professionals.html" class="btn-ghost hover-trigger">
+              <a href="contact.html" class="btn-ghost hover-trigger">
                 Get In Touch <i data-lucide="chevron-right" class="w-4 h-4 icon-arrow"></i>
               </a>
             </div>
