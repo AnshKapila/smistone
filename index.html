@@ -15,7 +15,7 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
     <script>
       tailwind.config = {
@@ -30,7 +30,7 @@
             },
             fontFamily: {
               sans: ['Inter', 'sans-serif'],
-              serif: ['Cormorant', 'serif'],
+              serif: ['Fraunces', 'serif'],
             },
             letterSpacing: {
               tightest: '-.02em',
@@ -196,8 +196,8 @@
         }
         .scrub-sticky {
           position: sticky;
-          top: 0;
-          height: 100vh;
+          top: 10vh;
+          height: 80vh;
           overflow: hidden;
           display: flex;
           align-items: center;
@@ -337,30 +337,42 @@
       <!-- CATEGORY INDEX (Light Section) -->
       <section class="bg-global-light text-black py-[120px] md:py-[160px]">
         <div class="max-w-[1280px] mx-auto px-6">
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 border-t border-black/10 pt-12">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-12">
             
-            <div class="reveal relative md:pr-8 md:border-r border-black/10">
-              <span class="block font-sans font-extralight text-6xl text-black/20 mb-6">01</span>
-              <h3 class="font-serif text-2xl mb-4">Sourcing</h3>
-              <p class="font-sans text-body-muted-light leading-relaxed">
-                We travel globally to unearth materials of exceptional character, focusing on unique geological formations and sustainable quarrying practices.
-              </p>
+            <div class="reveal relative overflow-hidden group min-h-[400px] flex flex-col justify-end p-8 rounded-lg">
+              <img src="https://static.kite.ai/image/upload/v1776530174/app/12f8a823-49ae-41b1-b52c-2af180d1bd62/iter2/trust-bg.png" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 z-0" alt="Sourcing" />
+              <div class="absolute inset-0 bg-black/60 z-0 group-hover:bg-black/50 transition-colors duration-700"></div>
+              <div class="relative z-10">
+                <span class="block font-sans font-extralight text-6xl text-white/40 mb-4">01</span>
+                <h3 class="font-serif text-2xl mb-4 text-white">Sourcing</h3>
+                <p class="font-sans text-white/80 leading-relaxed text-sm">
+                  We travel globally to unearth materials of exceptional character, focusing on unique geological formations and sustainable quarrying practices.
+                </p>
+              </div>
             </div>
             
-            <div class="reveal delay-100 relative md:pr-8 md:border-r border-black/10">
-              <span class="block font-sans font-extralight text-6xl text-black/20 mb-6">02</span>
-              <h3 class="font-serif text-2xl mb-4">Curation</h3>
-              <p class="font-sans text-body-muted-light leading-relaxed">
-                Our collections are heavily edited. We reject the superfluous, presenting only materials that offer true architectural value and aesthetic longevity.
-              </p>
+            <div class="reveal delay-100 relative overflow-hidden group min-h-[400px] flex flex-col justify-end p-8 rounded-lg">
+              <img src="https://static.kite.ai/image/upload/v1776530173/app/12f8a823-49ae-41b1-b52c-2af180d1bd62/iter2/cat-slate.png" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 z-0" alt="Curation" />
+              <div class="absolute inset-0 bg-black/60 z-0 group-hover:bg-black/50 transition-colors duration-700"></div>
+              <div class="relative z-10">
+                <span class="block font-sans font-extralight text-6xl text-white/40 mb-4">02</span>
+                <h3 class="font-serif text-2xl mb-4 text-white">Curation</h3>
+                <p class="font-sans text-white/80 leading-relaxed text-sm">
+                  Our collections are heavily edited. We reject the superfluous, presenting only materials that offer true architectural value and aesthetic longevity.
+                </p>
+              </div>
             </div>
             
-            <div class="reveal delay-200">
-              <span class="block font-sans font-extralight text-6xl text-black/20 mb-6">03</span>
-              <h3 class="font-serif text-2xl mb-4">Application</h3>
-              <p class="font-sans text-body-muted-light leading-relaxed">
-                Beyond supply, we consult on technical application, ensuring our surfaces perform flawlessly whether deployed on expansive floors or intricate feature walls.
-              </p>
+            <div class="reveal delay-200 relative overflow-hidden group min-h-[400px] flex flex-col justify-end p-8 rounded-lg">
+              <img src="https://static.kite.ai/image/upload/v1776530174/app/12f8a823-49ae-41b1-b52c-2af180d1bd62/iter2/cat-ripple.png" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 z-0" alt="Application" />
+              <div class="absolute inset-0 bg-black/60 z-0 group-hover:bg-black/50 transition-colors duration-700"></div>
+              <div class="relative z-10">
+                <span class="block font-sans font-extralight text-6xl text-white/40 mb-4">03</span>
+                <h3 class="font-serif text-2xl mb-4 text-white">Application</h3>
+                <p class="font-sans text-white/80 leading-relaxed text-sm">
+                  Beyond supply, we consult on technical application, ensuring our surfaces perform flawlessly whether deployed on expansive floors or intricate feature walls.
+                </p>
+              </div>
             </div>
 
           </div>
@@ -395,7 +407,7 @@
           <div class="w-full max-w-[1280px] mx-auto px-6 flex flex-col md:flex-row items-start md:items-center relative h-full">
             
             <!-- Left Fixed Content -->
-            <div class="w-full md:w-[35%] pt-24 md:pt-0 z-20 reveal bg-global-dark h-full flex flex-col justify-center pr-8 relative">
+            <div class="w-full md:w-[35%] pt-24 md:pt-0 z-20 reveal bg-global-dark h-full flex flex-col justify-center pr-8 relative before:absolute before:inset-0 before:-left-[100vw] before:bg-global-dark before:-z-10">
               <h2 class="font-serif text-4xl md:text-5xl mb-6">Curated Collections</h2>
               <p class="font-sans text-body-muted-dark mb-8 max-w-sm">
                 Explore our primary surface categories, each offering distinct textural and visual properties for diverse architectural applications.
@@ -405,7 +417,7 @@
                   Explore All Products <i data-lucide="chevron-right" class="w-4 h-4 icon-arrow ml-2"></i>
                 </a>
               </div>
-              <div class="hidden md:flex items-center gap-2 mt-auto pb-12">
+              <div class="hidden md:flex items-center gap-2">
                 <span class="text-xs font-sans uppercase tracking-widest text-white/40">Scroll to explore</span>
                 <i data-lucide="arrow-down" class="w-4 h-4 text-white/40 animate-bounce"></i>
               </div>
