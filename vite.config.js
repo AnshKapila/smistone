@@ -14,6 +14,7 @@ export default defineConfig({
         professionals: resolve(__dirname, 'professionals.html'),
         products: resolve(__dirname, 'products.html'),
         gallery: resolve(__dirname, 'gallery.html'),
+        veneer: resolve(__dirname, 'veneer.html'),
         'field-stone': resolve(__dirname, 'field-stone.html'),
         'slate-stone': resolve(__dirname, 'slate-stone.html'),
         'ripple-stone': resolve(__dirname, 'ripple-stone.html'),
