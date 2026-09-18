@@ -358,34 +358,42 @@
         <!-- Large Technical Diagram -->
         <div class="reveal delay-100 bg-[#151515] p-12 rounded-lg shadow-2xl flex items-center justify-center relative overflow-hidden group">
           <div class="absolute inset-0 bg-gradient-to-tr from-[#47331F]/40 to-transparent opacity-50"></div>
-          <svg class="w-full max-w-[500px] h-auto drop-shadow-2xl relative z-10 transition-transform duration-700 group-hover:scale-105" viewBox="0 0 400 250" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <!-- Top decorative stone face layer -->
-            <path d="M40 80 L200 40 L360 80 L200 120 Z" fill="#F3F2F0" fill-opacity="0.1" stroke="#F3F2F0" stroke-width="1.5" stroke-linejoin="round"/>
-            <path d="M40 80 L40 100 L200 140 L360 100 L360 80" fill="none" stroke="#F3F2F0" stroke-width="1.5" stroke-linejoin="round"/>
-            <path d="M200 120 L200 140" fill="none" stroke="#F3F2F0" stroke-width="1.5" stroke-linejoin="round"/>
-            
-            <!-- Acoustic backing layer (2cm) -->
-            <path d="M40 120 L200 160 L360 120 L200 80 Z" fill="#47331F" fill-opacity="0.6" stroke="#B98857" stroke-width="1.5" stroke-linejoin="round"/>
-            <path d="M40 120 L40 150 L200 190 L360 150 L360 120" fill="none" stroke="#B98857" stroke-width="1.5" stroke-linejoin="round"/>
-            <path d="M200 160 L200 190" fill="none" stroke="#B98857" stroke-width="1.5" stroke-linejoin="round"/>
-            
-            <!-- Dimensions / Labels -->
-            <path d="M370 120 L385 120" stroke="#F3F2F0" stroke-width="1" stroke-dasharray="2 2"/>
-            <path d="M370 150 L385 150" stroke="#F3F2F0" stroke-width="1" stroke-dasharray="2 2"/>
-            <path d="M380 120 L380 150" stroke="#F3F2F0" stroke-width="1"/>
-            <path d="M377 123 L380 120 L383 123" stroke="#F3F2F0" stroke-width="1"/>
-            <path d="M377 147 L380 150 L383 147" stroke="#F3F2F0" stroke-width="1"/>
-            <text x="390" y="138" font-family="Inter, sans-serif" font-size="12" fill="#F3F2F0" letter-spacing="1">2CM</text>
-            
-            <!-- Annotations -->
-            <circle cx="120" cy="70" r="4" fill="#F3F2F0"/>
-            <path d="M120 70 L90 40 L30 40" stroke="#F3F2F0" stroke-width="1"/>
-            <text x="30" y="32" font-family="Inter, sans-serif" font-size="10" fill="#F3F2F0" letter-spacing="1">NATURAL STONE VENEER</text>
-            
-            <circle cx="280" cy="155" r="4" fill="#B98857"/>
-            <path d="M280 155 L310 195 L370 195" stroke="#B98857" stroke-width="1"/>
-            <text x="370" y="187" font-family="Inter, sans-serif" font-size="10" fill="#B98857" text-anchor="end" letter-spacing="1">ACOUSTIC CORE</text>
-          </svg>
+          <svg class="w-full max-w-[500px] h-auto drop-shadow-lg" viewBox="0 0 750 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect width="750" height="300" fill="#FFFFFF" rx="4" />
+
+                  <!-- Layer 1: BACKING -->
+                  <path d="M 160 90 L 320 30 L 480 90 L 320 150 Z" fill="#151515" stroke="#000000" stroke-width="1"/>
+                  
+                  <!-- Layer 2: FIBERGLASS -->
+                  <path d="M 120 100 L 280 40 L 440 100 L 280 160 Z" fill="#E5E5E5" stroke="#CCCCCC" stroke-width="1"/>
+                  
+                  <!-- Layer 3: ADHESIVE -->
+                  <path d="M 80 110 L 240 50 L 400 110 L 240 170 Z" fill="#47331F" stroke="#B98857" stroke-width="1"/>
+                  
+                  <!-- Layer 4: NATURAL STONE LAYER -->
+                  <path d="M 40 120 L 200 60 L 360 120 L 200 180 Z" fill="#F3F2F0" stroke="#D1D1D1" stroke-width="1"/>
+
+                  <!-- Connecting Lines & Labels -->
+                  <!-- Backing -->
+                  <circle cx="400" cy="120" r="4" fill="#151515"/>
+                  <path d="M 400 120 L 420 80 L 550 80" stroke="#151515" stroke-width="1" stroke-dasharray="2 2"/>
+                  <text x="560" y="84" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#151515" letter-spacing="1">BACKING</text>
+
+                  <!-- Fiberglass -->
+                  <circle cx="360" cy="130" r="4" fill="#151515"/>
+                  <path d="M 360 130 L 380 120 L 550 120" stroke="#151515" stroke-width="1" stroke-dasharray="2 2"/>
+                  <text x="560" y="124" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#151515" letter-spacing="1">FIBERGLASS</text>
+
+                  <!-- Adhesive -->
+                  <circle cx="320" cy="140" r="4" fill="#151515"/>
+                  <path d="M 320 140 L 340 160 L 550 160" stroke="#151515" stroke-width="1" stroke-dasharray="2 2"/>
+                  <text x="560" y="164" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#151515" letter-spacing="1">ADHESIVE</text>
+
+                  <!-- Stone -->
+                  <circle cx="280" cy="150" r="4" fill="#151515"/>
+                  <path d="M 280 150 L 300 200 L 550 200" stroke="#151515" stroke-width="1" stroke-dasharray="2 2"/>
+                  <text x="560" y="204" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#151515" letter-spacing="1">NATURAL STONE LAYER</text>
+                </svg>
         </div>
 
       </div>
