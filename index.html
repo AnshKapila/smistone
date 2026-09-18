@@ -701,13 +701,24 @@
                 <span class="text-xs font-sans uppercase tracking-widest text-white/40 border border-white/20 px-3 py-1 rounded-full">Curated Materials</span>
                 <span class="text-xs font-sans uppercase tracking-widest text-white/40 border border-white/20 px-3 py-1 rounded-full">Consistency</span>
               </div>
-              <h2 class="font-serif text-4xl md:text-5xl mb-6">Dedicated to the Trade.</h2>
-              <p class="font-sans text-body-muted-dark mb-8 leading-relaxed">
-                We understand the stakes of high-end design. Our commitment is providing unmatched consistency across large orders, rigorous quality control, and dedicated technical support for your firm.
-              </p>
-              <a href="contact.html" class="btn-ghost hover-trigger">
-                Get In Touch <i data-lucide="chevron-right" class="w-4 h-4 icon-arrow"></i>
-              </a>
+              <h2 class="font-serif text-4xl md:text-5xl mb-6">Get In Touch.</h2>
+              <form id="home-contact-form" class="flex flex-col gap-6">
+                <div>
+                  <label for="name" class="sr-only">Name</label>
+                  <input type="text" id="name" name="name" required placeholder="Name / Firm" class="w-full bg-transparent border-b border-white/20 py-3 text-white placeholder:text-white/30 focus:outline-none focus:border-white transition-colors font-sans" />
+                </div>
+                <div>
+                  <label for="email" class="sr-only">Email</label>
+                  <input type="email" id="email" name="email" required placeholder="Email Address" class="w-full bg-transparent border-b border-white/20 py-3 text-white placeholder:text-white/30 focus:outline-none focus:border-white transition-colors font-sans" />
+                </div>
+                <div>
+                  <label for="project" class="sr-only">Project Details</label>
+                  <textarea id="project" name="project" rows="3" placeholder="Project Details (Optional)" class="w-full bg-transparent border-b border-white/20 py-3 text-white placeholder:text-white/30 focus:outline-none focus:border-white transition-colors font-sans resize-none"></textarea>
+                </div>
+                <button type="submit" class="self-start mt-4 bg-white text-black px-8 py-4 font-sans text-sm font-medium tracking-widest uppercase hover:bg-gray-200 transition-colors hover-trigger">
+                  Submit Inquiry
+                </button>
+              </form>
             </div>
           </div>
 
