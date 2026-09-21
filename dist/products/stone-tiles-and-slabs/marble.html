@@ -1,0 +1,665 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Marble - Coming Soon | SMI Stone</title>
+    
+    <meta name="description" content="Premium surface materials for architects and interior designers. Curated stone, slate, and architectural finishes." />
+    <meta property="og:title" content="SMI Stone | Architectural Surface Materials" />
+    <meta property="og:description" content="Premium surface materials for architects and interior designers. Curated stone, slate, and architectural finishes." />
+    <meta property="og:type" content="website" />
+
+    <script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script>
+    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&display=swap" rel="stylesheet">
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              global: {
+                dark: '#0a0a0a',
+                surface: '#1c1c1c',
+                light: '#ffffff',
+              }
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              serif: ['Fraunces', 'serif'],
+            },
+            letterSpacing: {
+              tightest: '-.02em',
+              widest: '.02em',
+            }
+          }
+        }
+      }
+    </script>
+
+    <style>
+      /* BASE STYLES */
+      :root {
+        --dark: #0a0a0a;
+        --light: #ffffff;
+      }
+      
+      body {
+        background-color: var(--dark);
+        color: var(--light);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        cursor: none; /* Hide default cursor for custom one */
+      }
+
+      /* CUSTOM CURSOR */
+      #custom-cursor {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 20px;
+        height: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.8);
+        border-radius: 0; /* Square as per spec */
+        pointer-events: none;
+        z-index: 9999;
+        transform: translate(-50%, -50%);
+        transition: width 0.2s, height 0.2s, background-color 0.2s;
+        mix-blend-mode: difference;
+      }
+      
+      body:hover #custom-cursor {
+        opacity: 1;
+      }
+
+      a:hover ~ #custom-cursor,
+      button:hover ~ #custom-cursor,
+      .hover-trigger:hover ~ #custom-cursor {
+        width: 40px;
+        height: 40px;
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+
+      /* TYPOGRAPHY UTILS */
+      .text-body-muted-dark { color: rgba(255, 255, 255, 0.65); }
+      .text-body-muted-light { color: rgba(0, 0, 0, 0.6); }
+
+      /* SCROLL REVEAL */
+      .reveal {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .delay-100 { transition-delay: 100ms; }
+      .delay-200 { transition-delay: 200ms; }
+      .delay-300 { transition-delay: 300ms; }
+
+      /* NAVBAR SCROLL EFFECT */
+      #navbar {
+        transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+      }
+      #navbar.scrolled {
+        background-color: rgba(10, 10, 10, 0.8);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+      }
+
+      /* HERO MASK REVEAL */
+      .mask-reveal-container {
+        overflow: hidden;
+      }
+      .mask-reveal {
+        display: inline-block;
+        transform: translateY(100%);
+        transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .mask-reveal.active {
+        transform: translateY(0);
+      }
+
+      /* GHOST BUTTON */
+      .btn-ghost {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.75rem 1.5rem;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: white;
+        font-family: 'Inter', sans-serif;
+        font-size: 0.875rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.02em;
+        transition: all 0.3s ease;
+      }
+      .btn-ghost:hover {
+        background-color: white;
+        color: black;
+      }
+      .btn-ghost .icon-arrow {
+        transition: transform 0.3s ease;
+      }
+      .btn-ghost:hover .icon-arrow {
+        transform: translateX(6px);
+      }
+
+      .btn-primary {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.75rem 1.5rem;
+        background-color: var(--light);
+        color: var(--dark);
+        font-family: 'Inter', sans-serif;
+        font-size: 0.875rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.02em;
+        border: 1px solid var(--light);
+        text-decoration: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+      .btn-primary:hover {
+        background-color: #e5e5e5;
+        border-color: #e5e5e5;
+      }
+      .btn-primary .icon-arrow {
+        transition: transform 0.3s ease;
+      }
+      .btn-primary:hover .icon-arrow {
+        transform: translateX(6px);
+      }
+
+      .btn-ghost-dark {
+        border-color: rgba(0, 0, 0, 0.2);
+        color: black;
+      }
+      .btn-ghost-dark:hover {
+        background-color: black;
+        color: white;
+      }
+
+      /* HORIZONTAL SCRUB SECTION */
+      @media (min-width: 768px) {
+        .scrub-container {
+          height: 400vh; /* 4 cards = 400vh */
+          position: relative;
+        }
+        .scrub-sticky {
+          position: sticky;
+          top: 0;
+          height: 100vh;
+          overflow: hidden;
+          display: flex;
+          align-items: center;
+        }
+        .scrub-track {
+          display: flex;
+          gap: 2rem;
+          padding-left: 50vw; /* Start cards halfway across screen */
+          padding-right: 20vw;
+          will-change: transform;
+        }
+      }
+      @media (max-width: 767px) {
+        .scrub-track {
+          display: flex;
+          flex-direction: column;
+          gap: 2rem;
+        }
+      }
+
+      /* MASONRY OFFSET */
+      @media (min-width: 768px) {
+        .masonry-col-2 {
+          transform: translateY(60px);
+        }
+      }
+
+      /* IMAGE OVERLAYS */
+      .gradient-overlay-bottom {
+        background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 50%);
+      }
+      .gradient-overlay-top {
+        background: linear-gradient(to bottom, rgba(10,10,10,0.6) 0%, transparent 30%);
+      }
+
+      /* CARD HOVER EFFECTS */
+      .hover-card-img {
+        transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .group:hover .hover-card-img {
+        transform: scale(1.05);
+      }
+
+      /* HIDE SCROLLBAR FOR CLEAN LOOK */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: var(--dark);
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #333;
+      }
+    </style>
+  </head>
+  <body class="antialiased selection:bg-white selection:text-black">
+    
+    <div id="custom-cursor" class="hidden md:block"></div>
+
+    <!-- NAVIGATION -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+      <div class="max-w-[1280px] mx-auto px-6 md:px-8 h-[80px] flex items-center justify-between">
+        
+        <!-- Logo -->
+        <a href="/" class="flex items-center hover-trigger px-3 py-2 md:px-4 md:py-2.5" aria-label="Home">
+          <img src="/logo.svg" alt="SMI Stone" class="h-10 md:h-12 w-auto object-contain" />
+        </a>
+
+        <!-- Desktop Links -->
+        <div class="hidden md:flex items-center gap-10 absolute left-1/2 -translate-x-1/2">
+          <a href="../../index.html" class="text-sm font-sans font-medium tracking-widest uppercase hover:text-white/60 transition-colors">Home</a>
+          <a href="../../products/index.html" class="text-sm font-sans font-medium tracking-widest uppercase hover:text-white/60 transition-colors">Our Products</a>
+            <a href="../../gallery.html" class="text-sm font-sans font-medium tracking-widest uppercase hover:text-white/60 transition-colors">Gallery</a>
+          <a href="../../about.html" class="text-sm font-sans font-medium tracking-widest uppercase hover:text-white/60 transition-colors">About Us</a>
+          <a href="../../contact.html" class="text-sm font-sans font-medium tracking-widest uppercase hover:text-white/60 transition-colors">Contact</a>
+        </div>
+
+        <!-- Desktop CTAs -->
+        <div class="hidden md:flex items-center gap-6">
+          <a href="#contact" class="btn-primary hover-trigger">
+            Get In Touch <i data-lucide="chevron-right" class="w-4 h-4 icon-arrow"></i>
+          </a>
+        </div>
+
+        <!-- Mobile Menu Trigger -->
+        <button id="mobile-menu-btn" class="md:hidden p-2 text-white focus:outline-none hover-trigger">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+    </nav>
+
+    <!-- MOBILE MENU OVERLAY -->
+    <div id="mobile-menu" class="fixed inset-0 z-[60] bg-global-dark transform translate-x-full transition-transform duration-500 flex flex-col">
+      <div class="h-[80px] flex items-center justify-between px-6 border-b border-white/10">
+        <img src="/logo.svg" alt="SMI Stone" class="h-6 w-auto" />
+        <button id="close-mobile-menu" class="p-2 text-white">
+          <i data-lucide="x" class="w-6 h-6"></i>
+        </button>
+      </div>
+      <div class="flex-1 flex flex-col justify-center items-start px-12 gap-8">
+        <a href="../../index.html" class="text-4xl font-serif mobile-link">Home</a>
+        <a href="../../products/index.html" class="text-4xl font-serif mobile-link">Our Products</a>
+          <a href="../../gallery.html" class="text-4xl font-serif mobile-link">Gallery</a>
+        <a href="../../about.html" class="text-4xl font-serif mobile-link">About Us</a>
+        <a href="../../contact.html" class="text-4xl font-serif mobile-link mt-8 text-white/50">Contact Us</a>
+      </div>
+    </div>
+
+    <main id="app">
+      <!-- STONE HERO -->
+      <section class="relative h-[60vh] w-full flex items-center justify-center overflow-hidden mask-reveal-container">
+        <div class="absolute inset-0 z-0">
+          <img src="https://www.regattaexports.com/wp-content/uploads/2026/08/Toronto-Marble-Swatch.webp" alt="Hero Image" class="w-full h-full object-cover parallax-img" data-speed="0.3" />
+          <div class="absolute inset-0 bg-black/40"></div>
+        </div>
+        <div class="relative z-10 text-center px-4">
+          <h1 class="font-serif text-5xl md:text-7xl mb-6 tracking-tight">Marble - Coming Soon</h1>
+          <p class="font-sans text-lg md:text-xl text-white/80 max-w-2xl mx-auto tracking-wide font-light reveal active delay-100">
+            Explore the unique textures and characteristics.
+          </p>
+        </div>
+      </section>
+
+      <!-- STONE DETAILS -->
+      <section class="py-24 bg-white text-black px-4 md:px-12">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
+          <div class="reveal">
+            <h2 class="font-serif text-4xl mb-6">Specifications</h2>
+            <div class="space-y-6 font-sans text-sm tracking-wide">
+              <div class="border-b border-black/10 pb-4 flex justify-between">
+                <span class="text-black/60 uppercase">Origin</span>
+                <span class="font-medium">Curated Selection</span>
+              </div>
+              <div class="border-b border-black/10 pb-4 flex justify-between">
+                <span class="text-black/60 uppercase">Finish</span>
+                <span class="font-medium">Matte / Honed</span>
+              </div>
+              <div class="border-b border-black/10 pb-4 flex justify-between">
+                <span class="text-black/60 uppercase">Applications</span>
+                <span class="font-medium">Interior Flooring, Walls</span>
+              </div>
+            </div>
+            <div class="mt-12">
+              <a href="index.html#contact" class="btn-primary hover-trigger">
+                Request a Sample <i data-lucide="chevron-right" class="w-4 h-4 icon-arrow"></i>
+              </a>
+            </div>
+          </div>
+          <div class="reveal delay-100">
+            <p class="font-sans text-lg leading-relaxed text-black/80 mb-8">
+              This collection brings raw, architectural beauty into interior and exterior spaces. Selected for its unmatched consistency and tactile depth, it serves as the foundational element for luxury spaces.
+            </p>
+            <p class="font-sans text-lg leading-relaxed text-black/80">
+              Ideal for large format applications where seamless continuity is paramount. Each slab is rigorously inspected to ensure the highest standards for professional trade use.
+            </p>
+          </div>
+        </div>
+      </section>
+    
+      
+      <!-- PROMOTIONAL STRIP (VENEER) -->
+      <section class="w-full relative min-h-[40vh] py-16 flex flex-col md:flex-row items-center bg-gradient-to-b md:bg-gradient-to-r from-[#47331F] to-transparent overflow-hidden">
+        <div class="w-full max-w-[1280px] mx-auto px-6 flex flex-col md:flex-row items-center relative z-10">
+          
+          <!-- Left Content -->
+          <div class="w-full md:w-1/2 md:pr-16 mb-12 md:mb-0">
+            <h3 style="font-family: 'Newsreader', serif;" class="text-3xl md:text-4xl text-[#F3F2F0] mb-4">
+              Smineer
+            </h3>
+            <p class="font-sans font-light text-[#F3F2F0]/90 text-lg mb-8 leading-relaxed max-w-lg">
+              [Placeholder] Every finish in this collection is also available as a 2cm acoustic linear veneer — the same natural character, engineered for sound performance.
+            </p>
+            <div class="flex flex-col md:flex-row items-start md:items-center gap-6">
+              <a href="../../contact.html" class="bg-[#B98857] hover:bg-[#a6774a] text-black font-sans text-xs tracking-widest uppercase px-8 py-4 font-medium transition-colors text-center w-full md:w-auto">
+                Inquire About Smineer
+              </a>
+              <a href="../../veneer.html" class="font-sans text-xs tracking-widest uppercase text-[#F3F2F0] hover:text-[#B98857] transition-colors border-b border-[#F3F2F0]/30 hover:border-[#B98857] pb-1 w-full md:w-auto text-center md:text-left">
+                Learn More &rarr;
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Graphic -->
+          <div class="w-full md:w-1/2 flex justify-center md:justify-end items-center relative">
+            <svg class="w-full max-w-[450px] h-auto drop-shadow-xl" viewBox="0 0 400 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Technical Diagram / Line Illustration -->
+              <!-- Top decorative stone face layer -->
+              <path d="M40 80 L200 40 L360 80 L200 120 Z" fill="#F3F2F0" fill-opacity="0.05" stroke="#F3F2F0" stroke-width="1.5" stroke-linejoin="round"/>
+              <path d="M40 80 L40 100 L200 140 L360 100 L360 80" fill="none" stroke="#F3F2F0" stroke-width="1.5" stroke-linejoin="round"/>
+              <path d="M200 120 L200 140" fill="none" stroke="#F3F2F0" stroke-width="1.5" stroke-linejoin="round"/>
+              
+              <!-- Acoustic backing layer (2cm) -->
+              <path d="M40 120 L200 160 L360 120 L200 80 Z" fill="#47331F" fill-opacity="0.4" stroke="#B98857" stroke-width="1.5" stroke-linejoin="round"/>
+              <path d="M40 120 L40 150 L200 190 L360 150 L360 120" fill="none" stroke="#B98857" stroke-width="1.5" stroke-linejoin="round"/>
+              <path d="M200 160 L200 190" fill="none" stroke="#B98857" stroke-width="1.5" stroke-linejoin="round"/>
+              
+              <!-- Dimensions / Labels -->
+              <path d="M370 120 L385 120" stroke="#F3F2F0" stroke-width="1" stroke-dasharray="2 2"/>
+              <path d="M370 150 L385 150" stroke="#F3F2F0" stroke-width="1" stroke-dasharray="2 2"/>
+              <path d="M380 120 L380 150" stroke="#F3F2F0" stroke-width="1"/>
+              <path d="M377 123 L380 120 L383 123" stroke="#F3F2F0" stroke-width="1"/>
+              <path d="M377 147 L380 150 L383 147" stroke="#F3F2F0" stroke-width="1"/>
+              
+              <text x="390" y="138" font-family="Inter, sans-serif" font-size="10" fill="#F3F2F0" letter-spacing="1">2CM</text>
+              
+              <!-- Annotations -->
+              <circle cx="120" cy="70" r="3" fill="#F3F2F0"/>
+              <path d="M120 70 L90 40 L40 40" stroke="#F3F2F0" stroke-width="1"/>
+              <text x="40" y="35" font-family="Inter, sans-serif" font-size="10" fill="#F3F2F0" letter-spacing="1">STONE VENEER</text>
+              
+              <circle cx="280" cy="155" r="3" fill="#B98857"/>
+              <path d="M280 155 L310 185 L360 185" stroke="#B98857" stroke-width="1"/>
+              <text x="360" y="180" font-family="Inter, sans-serif" font-size="10" fill="#B98857" text-anchor="end" letter-spacing="1">ACOUSTIC BACKING</text>
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      <!-- TEXTURE SUBCATEGORIES -->
+      <section class="py-24 bg-global-surface text-white px-4 md:px-12">
+        <div class="max-w-7xl mx-auto">
+          <div class="mb-16 text-center reveal">
+            <h2 class="font-serif text-3xl md:text-4xl mb-4">Texture Variations</h2>
+            <p class="font-sans text-body-muted-dark max-w-xl mx-auto">Explore the diverse finishes and granular textures available within this collection.</p>
+          </div>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="aspect-square bg-white/5 rounded overflow-hidden reveal"><img src="https://www.regattaexports.com/wp-content/uploads/2026/08/Toronto-Marble-Swatch.webp" alt="Texture 1" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" /></div>
+            <div class="aspect-square bg-white/5 rounded overflow-hidden reveal delay-100"><img src="https://www.regattaexports.com/wp-content/uploads/2017/03/Fantasy-Brown-Marble.webp" alt="Texture 2" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" /></div>
+            <div class="aspect-square bg-white/5 rounded overflow-hidden reveal delay-200"><img src="https://www.regattaexports.com/wp-content/uploads/2017/03/Pink-Marble-1.webp" alt="Texture 3" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" /></div>
+            <div class="aspect-square bg-white/5 rounded overflow-hidden reveal delay-300"><img src="https://www.regattaexports.com/wp-content/uploads/2017/03/Pink-Onyx-Marble.webp" alt="Texture 4" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" /></div>
+            <div class="aspect-square bg-white/5 rounded overflow-hidden reveal"><img src="https://www.regattaexports.com/wp-content/uploads/2026/08/Toronto-Marble-Swatch.webp" alt="Texture 5" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" /></div>
+            <div class="aspect-square bg-white/5 rounded overflow-hidden reveal delay-100"><img src="https://www.regattaexports.com/wp-content/uploads/2017/03/Fantasy-Brown-Marble.webp" alt="Texture 6" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" /></div>
+            <div class="aspect-square bg-white/5 rounded overflow-hidden reveal delay-200"><img src="https://www.regattaexports.com/wp-content/uploads/2017/03/Pink-Marble-1.webp" alt="Texture 7" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" /></div>
+            <div class="aspect-square bg-white/5 rounded overflow-hidden reveal delay-300"><img src="https://www.regattaexports.com/wp-content/uploads/2017/03/Pink-Onyx-Marble.webp" alt="Texture 8" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" /></div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="bg-[#111111] border-t border-white/10 pt-16 pb-8">
+      <div class="max-w-[1280px] mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+          
+          <!-- Brand -->
+          <div class="col-span-1 md:col-span-1">
+            <img src="/logo.svg" alt="SMI Stone" class="h-6 w-auto mb-6" />
+            <p class="font-sans text-sm text-body-muted-dark max-w-xs">
+              Curated architectural surface materials for visionary spaces.
+            </p>
+          </div>
+
+          <!-- Links -->
+          <div>
+            <h4 class="font-sans text-xs uppercase tracking-widest text-white/40 mb-6">Collections</h4>
+            <ul class="flex flex-col gap-3 font-sans text-sm text-white/70">
+              <li><a href="stone.html" class="hover:text-white transition-colors">Marble - Coming Soon</a></li>
+              <li><a href="stone.html" class="hover:text-white transition-colors">Slate Stone</a></li>
+              <li><a href="stone.html" class="hover:text-white transition-colors">Ripple Stone</a></li>
+              <li><a href="stone.html" class="hover:text-white transition-colors">Sandstone</a></li>
+            </ul>
+          </div>
+
+          <!-- Links -->
+          <div>
+            <h4 class="font-sans text-xs uppercase tracking-widest text-white/40 mb-6">Company</h4>
+            <ul class="flex flex-col gap-3 font-sans text-sm text-white/70">
+              <li><a href="../../about.html" class="hover:text-white transition-colors">About Us</a></li>
+              <li><a href="index.html#materials" class="hover:text-white transition-colors">Our Products</a></li>
+              <li><a href="../../professionals.html" class="hover:text-white transition-colors">For Professionals</a></li>
+              <li><a href="../../contact.html" class="hover:text-white transition-colors">Contact</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact -->
+          <div>
+            <h4 class="font-sans text-xs uppercase tracking-widest text-white/40 mb-6">Studio</h4>
+            <ul class="flex flex-col gap-3 font-sans text-sm text-white/70">
+              <li>sales@smistone.in</li>
+              <li>8058510592</li>
+              <li class="mt-4 pt-4 border-t border-white/10">Riico Industrial Area<br>Deoli, Tonk Rajasthan 304804</li>
+            </ul>
+          </div>
+
+        </div>
+
+        <div class="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/10 font-sans text-xs text-white/40">
+          <p>&copy; <span id="year"></span> SMI Stone. All rights reserved.</p>
+          <div class="flex gap-6 mt-4 md:mt-0">
+            <a href="#" class="hover:text-white transition-colors">Instagram</a>
+            <a href="#" class="hover:text-white transition-colors">Pinterest</a>
+            <a href="#" class="hover:text-white transition-colors">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- DATA & LOGIC -->
+    <script id="content" type="application/json">{
+    "company": "content/company.json"
+}</script>
+
+<script id="main_script">
+
+// Initialize Icons
+      lucide.createIcons();
+
+      // Set Year
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      // Mobile Menu Logic
+      const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+      const closeMobileMenuBtn = document.getElementById('close-mobile-menu');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const mobileLinks = document.querySelectorAll('.mobile-link');
+
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.remove('translate-x-full');
+      });
+      closeMobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.add('translate-x-full');
+      });
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('translate-x-full');
+        });
+      });
+
+      // Navbar Scroll Effect
+      const nav = document.getElementById('navbar');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+          nav.classList.add('scrolled');
+        } else {
+          nav.classList.remove('scrolled');
+        }
+      }, { passive: true });
+
+      // Custom Cursor Logic
+      const cursor = document.getElementById('custom-cursor');
+      if (window.matchMedia("(min-width: 768px)").matches) {
+        document.addEventListener('mousemove', (e) => {
+          cursor.style.left = e.clientX + 'px';
+          cursor.style.top = e.clientY + 'px';
+        });
+      }
+
+      // Scroll Reveal Observer
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px"
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            // Optional: stop observing once revealed
+            // observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll('.reveal').forEach(el => {
+        observer.observe(el);
+      });
+
+      // Hero Mask Reveal (On Load)
+      window.addEventListener('load', () => {
+        setTimeout(() => {
+          document.getElementById('hero-line-1').classList.add('active');
+        }, 100);
+        setTimeout(() => {
+          document.getElementById('hero-line-2').classList.add('active');
+        }, 300);
+        setTimeout(() => {
+          document.getElementById('hero-subtext').classList.add('active');
+        }, 600);
+      });
+
+      // Parallax Effect
+      const parallaxImages = document.querySelectorAll('.parallax-img');
+      window.addEventListener('scroll', () => {
+        requestAnimationFrame(() => {
+          parallaxImages.forEach(img => {
+            const rect = img.parentElement.getBoundingClientRect();
+            // Check if in viewport
+            if (rect.top < window.innerHeight && rect.bottom > 0) {
+              const speed = parseFloat(img.dataset.speed) || 0.2;
+              // Calculate distance from center of screen for smoother effect
+              const yPos = (rect.top - window.innerHeight/2) * speed;
+              img.style.transform = `translateY(${yPos}px)`;
+            }
+          });
+        });
+      }, { passive: true });
+
+      // Horizontal Scrub Logic
+      const scrubSection = document.querySelector('.scrub-container');
+      const scrubTrack = document.getElementById('scrub-track');
+      
+      if (scrubSection && scrubTrack && window.matchMedia("(min-width: 768px)").matches) {
+        window.addEventListener('scroll', () => {
+          requestAnimationFrame(() => {
+            const rect = scrubSection.getBoundingClientRect();
+            const start = rect.top; 
+            const distance = rect.height - window.innerHeight; 
+
+            // If section is pinned (top is at or above 0, and hasn't scrolled past bottom)
+            if (start <= 0 && start >= -distance) {
+              const progress = Math.abs(start) / distance;
+              // Calculate how far to translate. 
+              // Track width minus viewport width gives max translation needed.
+              // Adding a bit extra so the last card clears the center.
+              const maxTranslate = scrubTrack.scrollWidth - window.innerWidth + (window.innerWidth * 0.2); 
+              scrubTrack.style.transform = `translateX(-${progress * maxTranslate}px)`;
+            } else if (start > 0) {
+              scrubTrack.style.transform = `translateX(0px)`;
+            } else {
+              // Ensure it stays at end position when scrolled past
+              const maxTranslate = scrubTrack.scrollWidth - window.innerWidth + (window.innerWidth * 0.2);
+              scrubTrack.style.transform = `translateX(-${maxTranslate}px)`;
+            }
+          });
+        }, { passive: true });
+      }
+
+      // Form Handling
+      const contactForm = document.getElementById('contact-form');
+      if (contactForm) {
+        contactForm.addEventListener('submit', async (e) => {
+          e.preventDefault();
+          const btn = e.target.querySelector('button[type="submit"]');
+          const originalText = btn.innerHTML;
+          
+          btn.disabled = true;
+          btn.textContent = 'Sending...';
+
+          try {
+            // Simulate API call to sales@smistone.in
+            await new Promise(resolve => setTimeout(resolve, 1500));
+            e.target.reset();
+            btn.textContent = 'Message Sent';
+            btn.classList.add('bg-green-600', 'text-white', 'border-transparent');
+          } catch (err) {
+            btn.textContent = 'Error Sending';
+          }
+
+          setTimeout(() => {
+            btn.disabled = false;
+            btn.innerHTML = originalText;
+            btn.classList.remove('bg-green-600', 'text-white', 'border-transparent');
+          }, 3000);
+        });
+      }
+
+    </script>
+  <script>(function(){document.addEventListener("error",function(e){var img=e.target;if(!img||img.tagName!=="IMG")return;var w=img.width||img.offsetWidth||300;var h=img.height||img.offsetHeight||200;img.src="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%27"+w+"%27 height=%27"+h+"%27%3E%3Crect width=%27100%25%27 height=%27100%25%27 fill=%27%23e5e7eb%27/%3E%3C/svg%3E";img.alt="";},true)})()</script>
+    
+  </body>
+</html>
+
+
